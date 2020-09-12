@@ -13,50 +13,33 @@ lcm([5, 7, 11, 35, 55, 77]) ➞ 385
 Notes
 N/A
 """
-
-def lcm(nums):
+def lcm(numbers):
     
-    a=sorted(list(set(nums)))    
-    if len(a)==1: return a[0]
-    
-    a1=a
-    for i in range(len(a)):
-        for j in range(1,len(a)):    
-            if a[i]!=a[j]:
-                if a[j]%a[i]==0:
-                    a1[j] = int(a[j]/a[i])
-                a1[j]=a[j]
-
+    a=sorted(list(set(numbers)), reverse = True)    
+    if a==[1]: return [1]
     pf=[]  #Prime Factorization of an Integer    
-    for i in a1:
+    for i in a:
         if i>1:
-            num = i
+            numbers = i
             k=[]
-            for i in range(2,num+1):
-                while num>1:
-                    if num%i == 0:
-                        num = num /i
+            for i in range(2,numbers+1):
+                while numbers>1:
+                    if numbers%i == 0:
+                        numbers = numbers /i
                         k.append(i)
                     else:
                         break 
-            pf.append(k)
-    
-    pf2= sorted(pf,key=len,reverse=True)    
-    pf3=pf2[0]
-    for i in pf2:
-        for j in i:
-            if not j in pf3:
-                pf3.append(j)
+            pf.append(k)   
+    pf2=pf[0]
+    for i in pf:
+        for j in i: 
+            if pf2.count(j)< i.count(j): pf2.append(j)
 
-    if a1==sorted(list(set(nums))):
-        result=1
-        for i in pf3:
-            result = result*i
-        return (result)
     result=1
-    for i in a1:
-        result = result*i
+    for i in pf2: result = result*i
+        
     return (result)
+     
 #lcm([1]) #, 1)
 #lcm([5, 5, 5]) #, 5)
 #lcm([67, 34, 12, 3, 2]) #, 13668)
