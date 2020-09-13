@@ -18,8 +18,8 @@ If given an empty list [], return an empty list [].
 def flip_list(lst):
     
     a= []
-    if len(lst) == 0:
-        return []
+    if len(lst) == 0: return []
+        
     if type(lst[0]) == list:
         for i in lst:
             a.append(i[0])
