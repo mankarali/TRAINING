@@ -21,8 +21,8 @@ def no_duplicate_letters(phrase):
 
     for i in range(len(a)):
         if len(a[i])>1:
-            if len(a[i]) != len(set(a[i].lower())):
-                return False
+            if len(a[i]) != len(set(a[i].lower())): return False
+                
                 break
     return True
 
