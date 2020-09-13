@@ -20,8 +20,8 @@ All strings will contain the first and second letters at least once.
 """
 def first_before_second(s, first, second):
 
-    if first in s[s.index(second):]:
-        return False    
+    if first in s[s.index(second):]:return False 
+           
     return True
     
     
