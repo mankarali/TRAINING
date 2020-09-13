@@ -25,7 +25,7 @@ def char_at_pos(r, s):
                 a.append(r[i])    
     if type(r) == str:
         return("".join(a))
-    else:
-        return(a)    
+    else: return(a)
+            
        
 char_at_pos([2, 4, 6, 8, 10], "even") #➞ [4, 8]
