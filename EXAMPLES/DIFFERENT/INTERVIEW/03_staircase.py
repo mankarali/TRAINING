@@ -12,4 +12,4 @@ For example, if N is 4, then there are 5 unique ways:
 """
 def staircase(s):
     return n if s <= 3 else (staircase(s-1) + staircase(s-2))
-steps(4)
+staircase(4)
